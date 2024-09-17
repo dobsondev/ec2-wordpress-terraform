@@ -1,6 +1,16 @@
-# luca.dobson.pw
+# EC2 WordPress Terraform 
 
-This is everything needed for Luca's WordPress website. This project includes the Terraform scripts to handle building the infrastructure, the WordPress theme that the website uses, GitHub actions to handle the deployment of the theme and a local Docker setup to allow modifications to the theme.
+This is everything needed for running and WordPress website through EC2. This project includes the Terraform scripts to handle building the infrastructure.
+
+### TODOs
+
+This is more a list of things that you currently have to do manually that would be preferable to do in the Terraform scripts:
+
+- You need to run the `certbot` command again manually once your domain is pointed to the EC2 instance
+- You need to change the permissions and ownership pretty heavily once you upload your WordPress files
+- You SHOULD add in IP restrictions for phpMyAdmin
+- You need to use `define( 'FS_METHOD', 'direct' );` in `wp-config.php`
+- You need to restart apache a lot when you do the above things
 
 ## Setting up the infrastructure with Terraform
 
